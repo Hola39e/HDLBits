@@ -1,0 +1,25 @@
+`timescale 1ns/1ps
+`include "Parameter.v"
+
+module test_Risc_16_bit (
+    
+);  
+    // Inputs
+    reg     clk;
+
+    // Instantiate the Unit Under Test
+    Risc_16_bit     uut(
+        .clk(clk)
+    );
+
+    initial begin
+        clk <= 1'b0;
+        `simulation_time;
+        $finish;
+    end
+
+    always begin
+        #5  clk = !clk;
+    end
+
+endmodule

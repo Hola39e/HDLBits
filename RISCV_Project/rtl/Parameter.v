@@ -22,7 +22,7 @@
 `define row_i 15
 `define row_d 8
 
-`define filename "./test/50001111_50001212.o"
+`define filename "50001111_50001212.txt"
 `define simulation_time #160
 
 `endif 
