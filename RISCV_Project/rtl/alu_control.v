@@ -4,7 +4,7 @@
 	LastEditors  : H
 	LastEditTime : 2021-09-24 21:44:46
 	Last Version : 1.0
-	Description  : 
+	Description  : control unit of ALU
 	
 	----------------------------------------------------------------------------------------
 	
