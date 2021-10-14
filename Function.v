@@ -7,6 +7,9 @@ module endian_rvs (
             output [N-1:0] b
         )
 );
+
+
+
     reg [N-1:0] b_temp;
     always @(*) begin
         if (en) begin    
