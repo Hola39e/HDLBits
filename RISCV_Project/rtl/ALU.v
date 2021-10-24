@@ -42,5 +42,7 @@ module ALU (
         endcase
     end
 
+
+
     assign zero = (result == 16'b0) ? 1'b1 : 1'b0;
 endmodule
