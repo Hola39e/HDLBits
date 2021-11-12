@@ -1,0 +1,162 @@
+$date
+	Fri Nov 12 22:29:04 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_adder4bit $end
+$var wire 4 ! Sum [3:0] $end
+$var wire 1 " Cout $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % Cin $end
+$scope module u_adder4bit $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 % Cin $end
+$var wire 4 ( Sum [3:0] $end
+$var wire 4 ) P [3:0] $end
+$var wire 4 * G [3:0] $end
+$var wire 1 " Cout $end
+$var wire 4 + C [3:0] $end
+$scope module adder0 $end
+$var wire 1 , Ai $end
+$var wire 1 - Bi $end
+$var wire 1 % Cin $end
+$var wire 1 . Gi $end
+$var wire 1 / Pi $end
+$var wire 1 0 Sum $end
+$upscope $end
+$scope module adder1 $end
+$var wire 1 1 Ai $end
+$var wire 1 2 Bi $end
+$var wire 1 3 Cin $end
+$var wire 1 4 Gi $end
+$var wire 1 5 Pi $end
+$var wire 1 6 Sum $end
+$upscope $end
+$scope module adder2 $end
+$var wire 1 7 Ai $end
+$var wire 1 8 Bi $end
+$var wire 1 9 Cin $end
+$var wire 1 : Gi $end
+$var wire 1 ; Pi $end
+$var wire 1 < Sum $end
+$upscope $end
+$scope module adder3 $end
+$var wire 1 = Ai $end
+$var wire 1 > Bi $end
+$var wire 1 ? Cin $end
+$var wire 1 @ Gi $end
+$var wire 1 A Pi $end
+$var wire 1 B Sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0B
+0A
+0@
+0?
+0>
+0=
+1<
+0;
+0:
+19
+08
+07
+06
+05
+14
+03
+12
+11
+00
+0/
+0.
+0-
+0,
+b10 +
+b10 *
+b0 )
+b100 (
+b10 '
+b10 &
+0%
+b10 $
+b10 #
+0"
+b100 !
+$end
+#10000
+1B
+1?
+b110 +
+0<
+b1001 !
+b1001 (
+10
+1;
+b101 )
+1/
+18
+1,
+b110 $
+b110 '
+b11 #
+b11 &
+#20000
+1B
+1?
+0<
+19
+13
+06
+b111 +
+0/
+1.
+b110 )
+15
+b1 *
+04
+b1001 !
+b1001 (
+10
+1-
+01
+1%
+b111 $
+b111 '
+b1 #
+b1 &
+#30000
+1B
+1?
+0<
+19
+06
+13
+1"
+b1111 +
+b1000 !
+b1000 (
+00
+b111 )
+1/
+0.
+b1000 *
+1@
+1>
+0,
+1=
+b1111 $
+b1111 '
+b1000 #
+b1000 &
+#40000
