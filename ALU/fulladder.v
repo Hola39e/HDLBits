@@ -1,4 +1,7 @@
+
 module fulladder(
+
+
     // System Clock
     input        Ai,
     input        Bi,
@@ -11,6 +14,10 @@ module fulladder(
     // Pi = A ^ B;
     // Gi = A & B;
 );
+/*******************************************************************************
+ *                                 Main Code
+*******************************************************************************/
+
     assign Pi = Ai ^ Bi;
     assign Gi = Ai & Bi;
     assign Sum = Pi ^ Cin;
