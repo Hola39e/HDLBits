@@ -21,4 +21,6 @@ module adder4bit(
     assign C[2] = G[2] | (P[2] & C[1]);
     assign C[3] = G[3] | (P[3] & C[2]);
     assign Cout = C[3];
+
+    
 endmodule
