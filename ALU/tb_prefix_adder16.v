@@ -19,7 +19,7 @@ module tb_prefix_adder16();
     wire Cout;
 
     initial begin
-        $dumpfile("adder.vcd");
+        $dumpfile("prefixadder.vcd");
         $dumpvars(0,tb_prefix_adder16);
     end
 
