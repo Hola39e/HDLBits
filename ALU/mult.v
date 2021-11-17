@@ -63,9 +63,9 @@ module mult
             mult_acc <= 'b0;
         end
         else if (data_rdy && cnt == 'b0) begin
-            mult1_shift <= {{N{1'b0}}, mult1} << 1;
+            mult1_shift <= {{M{1'b0}}, mult1} << 1;
             mult2_shift <= mult2 >> 1;
-            mult_acc <= mult2[0] ? {{N{1'b0}}, mult1} : 'b0;
+            mult_acc <= mult2[0] ? {{M{1'b0}}, mult1} : 'b0;
         end
         else if (cnt != M) begin
             mult1_shift <= mult1_shift << 1;
@@ -77,6 +77,9 @@ module mult
             mult2_shift <= 'b0;
         end
     end
+
+    wire checkpoint;
+    assign checkpoint = data_rdy && cnt;
 
         // result
     reg [M+N-1:0] res_r;
