@@ -43,6 +43,7 @@ always @(posedge clk or negedge rst_n ) begin
         mult2_shift <= mult2 >> 1;
         mult_acco   <= mult2[0] ? (mult_acci + mult1) : mult_acci;
         mult1_o     <= mult1 << 1;
+        rdy         <= 1'b1;
     end
     else begin
         mult1_o     <= 'b0;
