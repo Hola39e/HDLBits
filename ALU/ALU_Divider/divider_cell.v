@@ -43,10 +43,18 @@ module divider_cell
         end
         else if (en) begin
             rdy         <= 1'b1;
-            remainder   <= (dividend >= {1'b0, divisor}) ? (dividend - {1'b0, divisor}) : dividend;
-            merchant    <= (merchant_ci << 1) + (dividend > {1'b0, divisor}) ? 1'b1 : 1'b0;
             dividend_kp <= dividend_ci;
             divisor_kp  <= divisor;
+            // remainder   <= (dividend >= {1'b0, divisor}) ? (dividend - {1'b0, divisor}) : dividend;
+            // merchant    <= (merchant_ci << 1) + (dividend > {1'b0, divisor}) ? 1'b1 : 1'b0;
+            if (dividend >= {1'b0, divisor}) begin
+                merchant <= (merchant_ci << 1) + 1'b1;
+                remainder<= dividend - {1'b0, divisor};
+            end
+            else begin
+                merchant <= merchant_ci << 1;
+                remainder<= dividend;
+            end
         end
         else begin
             divisor_kp  <= 'b0;
