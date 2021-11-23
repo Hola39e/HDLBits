@@ -13,15 +13,16 @@
 // the serial fir implemention only excute one multiply once time in 1 clk
 // so the clk speed need to be 8 times of fs
 `define SAFE_DESIGN
+
 module fir_serial_low(
     // System Clock
     input        clk,
     input        rst_n,
 
     // User Interface
-    input       en,
+    input           en,
     input   [11:0]  xin,
-    output      valid,
+    output          valid,
     output  [28:0]  yout
 );
 
@@ -47,7 +48,7 @@ module fir_serial_low(
     assign coe[7]        = 12'd255 ;
 
     reg [2:0]   cnt;
-    integer i;
+    integer i, j;
     reg [11:0] xin_reg [15:0];
 
     always @(posedge clk or negedge rst_n ) begin
@@ -65,10 +66,10 @@ module fir_serial_low(
                 xin_reg[i] <= 12'b0;
             end
         end
-        else if (cnt == 3'b0 && en) begin
-            xin_reg[0] <= xin;
-            for (i = 1; i <= 15; i = i + 1) begin
-                xin_reg[i] = xin_reg[i - 1];
+        else if (cnt == 3'd0 && en) begin    //每8個周期讀入一次有效數據
+            xin_reg[0] <= xin ;
+            for (j=0; j<15; j=j+1) begin
+                xin_reg[j+1] <= xin_reg[j] ; // 數據移位
             end
         end
     end
@@ -93,7 +94,7 @@ module fir_serial_low(
         end
     end
 
-    assign add_s = add_a + add_b;
+    assign add_s = {add_a} + {add_b};
 
     reg [24:0] mout;
 
